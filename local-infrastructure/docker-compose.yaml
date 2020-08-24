@@ -30,8 +30,22 @@ services:
     environment:
       LICENSE: "${FORMIO_LICENSE}"
       MONGO: "${FORMIO_MONGO}"
+      PORTAL_SECRET: "${FORMIO_PORTAL_SECRET}"
       PRIMARY: "true"
     networks:
       - chefs-net
     ports:
-      - "3000:80"
+      - "4000:80"
+
+  formio_2:
+    container_name: formio_2
+    image: formio/formio-enterprise
+    restart: always
+    environment:
+      LICENSE: "${FORMIO_LICENSE}"
+      MONGO: "${FORMIO_MONGO_2}"
+      PORTAL_SECRET: "${FORMIO_PORTAL_SECRET}"
+    networks:
+      - chefs-net
+    ports:
+      - "4001:80"
