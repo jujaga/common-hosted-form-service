@@ -5,6 +5,8 @@ import '@/assets/scss/style.scss';
 import axios from 'axios';
 import NProgress from 'nprogress';
 import Vue from 'vue';
+import VueFormly from 'vue-formly';
+import VueFormlyBootstrap from 'vue-formly-bootstrap';
 
 import App from '@/App.vue';
 import auth from '@/store/modules/auth.js';
@@ -14,6 +16,8 @@ import VueKeycloakJs from '@/plugins/keycloak';
 import vuetify from '@/plugins/vuetify';
 
 Vue.config.productionTip = false;
+Vue.use(VueFormly);
+Vue.use(VueFormlyBootstrap);
 
 NProgress.configure({ showSpinner: false });
 NProgress.start();
