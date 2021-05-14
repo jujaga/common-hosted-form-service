@@ -52,6 +52,10 @@ routes.get('/:formId/versions/:formVersionId', currentUser, hasFormPermissions([
   await controller.readVersion(req, res, next);
 });
 
+routes.get('/:formId/versions/:formVersionId/fields', async (req, res, next) => {
+  await controller.readVersionFields(req, res, next);
+});
+
 // routes.put('/:formId/versions/:formVersionId', currentUser, hasFormPermissions([P.FORM_READ]), async (req, res, next) => {
 //   next(new Problem(410, { detail: 'This method is deprecated, use /forms/id/drafts to modify form versions.' }));
 // });
